@@ -12,31 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.SqlClient;
-using System.Data;
-using JournalLibrary;
 
 namespace JournalWebsite
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ViewEntry.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ViewEntry : Page
     {
-        public MainWindow()
+        public ViewEntry()
         {
             InitializeComponent();
         }
-
-        private void LogButton_Click(object sender, RoutedEventArgs e)
-        {
-            bool result = 
-    
-        }
-
-        private void RegButton_Click(object sender, RoutedEventArgs e)
-        {        
-        }
     }
 }
-

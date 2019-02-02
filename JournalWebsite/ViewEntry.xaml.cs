@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using JournalLibrary;
 
 namespace JournalWebsite
 {
@@ -20,9 +21,19 @@ namespace JournalWebsite
     /// </summary>
     public partial class ViewEntry : Page
     {
-        public ViewEntry()
+        public ViewEntry(string title, string entry)
         {
             InitializeComponent();
+
+            Title.Text = title;
+            Entry.Text = entry;
+        }
+
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService back = NavigationService.GetNavigationService(this);
+            back.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
         }
     }
 }

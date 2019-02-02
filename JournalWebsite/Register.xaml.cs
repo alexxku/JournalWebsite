@@ -13,50 +13,51 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using JournalLibrary;
+using JournalWebsite.DataContext;
+
 
 namespace JournalWebsite
 {
-    /// <summary>
-    /// Interaction logic for Register.xaml
-    /// </summary>
     public partial class Register : Page
     {
-        //Do not worry about this. This is just initialize your page. In another words, starting your page.
         public Register()
         {
             InitializeComponent();
         }
 
-        //Register button click event. The codes will execute when the register button is clicked.
         private void RegButton_Click(object sender, RoutedEventArgs e)
         {
-            //Assigning the reg with an int by calling the register method using Ubox and Pbox in the xaml page as arguements. 
-            int reg = Access.register(Ubox.Text.Trim(), Pbox.Text.Trim());
+            User user = new User();
+            user.UserName = Ubox.Text.Trim();
+            user.Password = Pbox.Text.Trim();
 
-            //If the reg is 0. The opacity for the "Taken Username" will be 100. It will show up.
-            if (reg == 0)
+            User reg = Access.register(user);
+
+            if (reg == null)
             {
-                //Statement to make the textblock opacity to 100.
                 TAKEN.Foreground.Opacity = 100;
             }
 
-            //If the reg is 1. The opacity for the "No password or sername" will be 100. It will show up.
-            else if (reg == 1)
+            else if (reg.Password == "" || reg.Password.Length < 1)
             {
-                //Statement to make the textblock opacity to 100.
                 NoPass.Foreground.Opacity = 100;
             }
-            //If reg is 3. The program will navigate to the other page.
-            else if (reg == 2)
+            else
             {
-                //"Nav" is the navigation service. We GetNavigationService from "this". "This" is Register.xaml
-                NavigationService nav = NavigationService.GetNavigationService(this);
+                UserInfo.UserId = reg.LoginId;
+                UserInfo.Username = reg.UserName;
 
-                /*So nav, which is the navigation service from Register.xaml, will navigate through a new URI, Uniformed Resource Identifier aka our next page. 
-                 Then we put our page name. Then we put urikind which means the different kinds of URI. The URI we are using is a relative to our main source. 
-                 Well from what I know.*/
-                nav.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
+                NavigationService regbutton = NavigationService.GetNavigationService(this);
+
+               
+                regbutton.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
             }
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService back = NavigationService.GetNavigationService(this);
+            back.Navigate(new Uri("Login.xaml", UriKind.Relative));
         }
     }
 }

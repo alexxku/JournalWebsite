@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace JournalLibrary
 {
     public class Erase
     {
 
-        static string connection = "Data Source=DESKTOP-2PSBHKH\\SQLEXPRESS;Initial Catalog = JournalWebsite; Integrated Security = True";
-
-        static SqlConnection JournalWebsite = new SqlConnection(connection);
+        static string connect = ConfigurationManager.ConnectionStrings["DBConnect"].ConnectionString;
+        public static SqlConnection JournalWebsite = new SqlConnection(connect);
 
         static public void delete(int ID)
         {

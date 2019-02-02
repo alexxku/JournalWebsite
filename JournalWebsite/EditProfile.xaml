@@ -38,11 +38,6 @@
                 <SolidColorBrush Color="Red" Opacity="0"/>
             </TextBlock.Foreground>
         </TextBlock>
-        <TextBlock x:Name="Updated" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Updated" FontSize="15"  Grid.Column="1" Grid.Row="1">
-            <TextBlock.Foreground>
-                <SolidColorBrush Color="Red" Opacity="0"/>
-            </TextBlock.Foreground>
-        </TextBlock>
 
         <TextBox x:Name="Ubox" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Width="266" Height="63" Grid.Column="1" Grid.Row="3"/>
         <TextBox x:Name="Pbox" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Width="266" Height="70" Grid.Row="5" Grid.Column="1"/>

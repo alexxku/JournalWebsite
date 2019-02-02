@@ -19,7 +19,7 @@ namespace JournalLibrary
 
          public static List<JournalList> view (int LogID)
         {
-            string SELECT = "SELECT J.LogInID, J.Title, J.[Entry] FROM[User info] AS U INNER JOIN[Journal entry] AS J ON U.LogInID = J.LogInID WHERE J.LogInID = @logID";
+            string SELECT = "SELECT J.JournalID, J.LogInID, J.Title, J.[Entry] FROM [User info] AS U INNER JOIN [Journal entry] AS J ON U.LogInID = J.LogInID WHERE J.LogInID = @logID";
 
             SqlCommand command = new SqlCommand(SELECT, JournalWebsite);
             command.Parameters.AddWithValue("@logID", LogID);
@@ -31,6 +31,8 @@ namespace JournalLibrary
             while (reader.Read())
             {
                 JournalList journal = new JournalList();
+                journal.JournalID = (int)reader["JournalId"];
+                journal.LogID = (int)reader["LogInID"];
                 journal.Title = reader["Title"].ToString();
                 journal.Entry = reader["Entry"].ToString();
 

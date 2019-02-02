@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Access.cs" />
+    <Compile Include="Delete.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="JournalList.cs" />
     <Compile Include="Profile.cs" />

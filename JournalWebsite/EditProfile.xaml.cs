@@ -37,15 +37,21 @@ namespace JournalWebsite
 
             if (updatedProfile == null)
             {
+              
                 Taken.Foreground.Opacity = 100;
             }
             else if (updatedProfile.Password == "" || updatedProfile.Password.Length < 1)
             {
+                Taken.Foreground.Opacity = 0;
                 Invalid.Foreground.Opacity = 100;
             }
             else
             {
-                Updated.Foreground.Opacity = 100;
+                UserInfo.Username = updatedProfile.UserName;
+
+                NavigationService B = NavigationService.GetNavigationService(this);
+
+                B.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
             }
            
         }

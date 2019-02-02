@@ -33,6 +33,7 @@ namespace JournalWebsite
 
             for (int count = 0; count < total; count++ )
             {
+                int journalID = mylist[count].JournalID;
                 string title = mylist[count].Title;
                 string entry = mylist[count].Entry;
 
@@ -43,7 +44,7 @@ namespace JournalWebsite
                  {
        
                      NavigationService nav = NavigationService.GetNavigationService(this);
-                     nav.Navigate(new ViewEntry(title, entry));
+                     nav.Navigate(new ViewEntry(journalID, title, entry));
                
                  };
 

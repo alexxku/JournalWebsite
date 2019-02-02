@@ -62,6 +62,7 @@
     <Compile Include="AddEntry.xaml.cs">
       <DependentUpon>AddEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataContext\Journalinfo.cs" />
     <Compile Include="DataContext\UserInfo.cs" />
     <Compile Include="EditProfile.xaml.cs">
       <DependentUpon>EditProfile.xaml</DependentUpon>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using JournalLibrary;
+using JournalWebsite.DataContext;
 
 namespace JournalWebsite
 {
@@ -21,9 +22,11 @@ namespace JournalWebsite
     /// </summary>
     public partial class ViewEntry : Page
     {
-        public ViewEntry(string title, string entry)
+        public ViewEntry(int ID, string title, string entry)
         {
             InitializeComponent();
+
+            Journalinfo.journalID = ID;
 
             Title.Text = title;
             Entry.Text = entry;
@@ -34,6 +37,15 @@ namespace JournalWebsite
         {
             NavigationService back = NavigationService.GetNavigationService(this);
             back.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+            Erase.delete(Journalinfo.journalID);
+
+            NavigationService delete = NavigationService.GetNavigationService(this);
+            delete.Navigate(new Uri("MainPage.xaml", UriKind.Relative));
         }
     }
 }

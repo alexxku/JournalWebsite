@@ -28,7 +28,7 @@ namespace JournalWebsite
 
             Journalinfo.journalID = ID;
 
-            Title.Text = title;
+            name.Text = title;
             Entry.Text = entry;
         }
 

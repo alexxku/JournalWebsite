@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 
 namespace JournalLibrary
 {
     public class Profile
     {
-        static string connection = "Data Source=DESKTOP-2PSBHKH\\SQLEXPRESS;Initial Catalog=JournalWebsite;Integrated Security=True";
-        static SqlConnection JournalWebsite = new SqlConnection(connection);
+        static string connect = ConfigurationManager.ConnectionStrings["DBConnect"].ConnectionString;
+        public static SqlConnection JournalWebsite = new SqlConnection(connect);
+
         public static User editProfile(User edit, int ID)
         {
             string SELECT = $"SELECT [LogInID], [UserName], [Password] FROM [User info] WHERE [LogInID] = @ID";

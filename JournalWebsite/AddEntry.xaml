@@ -25,14 +25,14 @@
             <RowDefinition Height="332*"/>
             <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="Exit" Content="Main Menu" Grid.Column="3" HorizontalAlignment="Left" Height="37" Grid.Row="1" VerticalAlignment="Top" Width="84" FontSize="15"/>
-        <TextBox x:Name="Title" Grid.Column="1" HorizontalAlignment="Left" Height="39" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="551" Background="LightGray"/>
-        <TextBox x:Name="Entry" Grid.Column="1" HorizontalAlignment="Left" Height="332" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="551" Background="WhiteSmoke"/>
-        <TextBlock x:Name="Updated" Grid.Column="1" HorizontalAlignment="Center" Height="37" Margin="187,0,168,0" Grid.Row="1" TextWrapping="Wrap" Text="Journal Updated" VerticalAlignment="Center" Width="196" FontSize="25">
+        <Button x:Name="Exit" Content="Back" Grid.Column="3" HorizontalAlignment="Left" Height="37" Grid.Row="1" VerticalAlignment="Bottom" Width="84" FontSize="15" Click="Exit_Click"/>
+        <TextBox x:Name="Titlebox" Grid.Column="1" HorizontalAlignment="Left" Height="39" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="551" Background="LightGray"/>
+        <TextBox x:Name="Entrybox" Grid.Column="1" HorizontalAlignment="Left" Height="332" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="551" Background="WhiteSmoke"/>
+        <TextBlock x:Name="NoEntry" Grid.Column="1" HorizontalAlignment="Center" Height="37" Margin="187,0,168,0" Grid.Row="1" TextWrapping="Wrap" Text="No Entry" VerticalAlignment="Center" Width="196" FontSize="25">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="Red" Opacity="0"/>
             </TextBlock.Foreground>
         </TextBlock>
-        <Button x:Name="Add" Content="Add Entry" Grid.Column="3" HorizontalAlignment="Left" Height="59" Margin="0,273,0,0" Grid.Row="4" VerticalAlignment="Top" Width="84" FontSize="18"/>
+        <Button x:Name="Add" Content="Add Entry" Grid.Column="3" HorizontalAlignment="Left" Height="59" Margin="0,273,0,0" Grid.Row="4" VerticalAlignment="Top" Width="84" FontSize="18" Click="Add_Click"/>
     </Grid>
 </Page>

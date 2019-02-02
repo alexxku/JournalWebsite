@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 using JournalLibrary;
+using JournalWebsite.DataContext;
+
 
 namespace JournalWebsite
 {
@@ -23,20 +25,13 @@ namespace JournalWebsite
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Do not worry about this. This is just initialize your page. In another words, starting your page.
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
-        private void LogButton_Click(object sender, RoutedEventArgs e)
-        {
-            bool result = 
-    
-        }
-
-        private void RegButton_Click(object sender, RoutedEventArgs e)
-        {        
-        }
     }
 }
 

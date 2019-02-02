@@ -35,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JournalLibrary">
-      <HintPath>..\JournalLibrary\JournalLibrary\bin\Debug\JournalLibrary.dll</HintPath>
+    <Reference Include="JournalLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JournalLibrary\bin\Debug\JournalLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,8 +62,13 @@
     <Compile Include="AddEntry.xaml.cs">
       <DependentUpon>AddEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataContext\Journalinfo.cs" />
+    <Compile Include="DataContext\UserInfo.cs" />
     <Compile Include="EditProfile.xaml.cs">
       <DependentUpon>EditProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -78,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
